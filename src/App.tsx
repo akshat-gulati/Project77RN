@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, Image } from 'react-native'
 import React from 'react'
 import Home from './screens/Home'
 import Profile from './screens/Profile'
@@ -28,7 +28,14 @@ function TabNavigator() {
   return (
     <Tab.Navigator screenOptions={{headerShown: true, tabBarActiveTintColor:"red", tabBarInactiveTintColor:"blue", tabBarLabelStyle:{fontSize: 20}}}>
       <Tab.Screen name="Home" component={Home} options={{tabBarActiveTintColor:"pink"}}/>
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Profile" component={Profile} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require('./Assets/TabBar/house.fill.png')}
+              style={{ width: size, height: size, tintColor: color }}
+            />
+          ),
+        }} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Layout" component={Layout} />
     </Tab.Navigator>
