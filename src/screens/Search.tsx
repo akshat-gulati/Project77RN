@@ -5,7 +5,7 @@ const Search = ({navigation}) => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Search</Text>
-      <Button title="Go to Layout" onPress={() => navigation.replace("Layout")} />
+      <Button title="Go to Layout" onPress={() => navigation.navigate("Layout")} />
     </View>
   )
 }

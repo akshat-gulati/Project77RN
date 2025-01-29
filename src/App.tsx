@@ -6,7 +6,12 @@ import Search from './screens/Search'
 import Layout from './screens/Layout'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function StackNavigator() {
   return (
@@ -19,11 +24,20 @@ function StackNavigator() {
     </Stack.Navigator>
   )
 }
-
+function TabNavigator() {
+  return (
+    <Tab.Navigator screenOptions={{headerShown: true, tabBarActiveTintColor:"red", tabBarInactiveTintColor:"blue", tabBarLabelStyle:{fontSize: 20}}}>
+      <Tab.Screen name="Home" component={Home} options={{tabBarActiveTintColor:"pink"}}/>
+      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="Layout" component={Layout} />
+    </Tab.Navigator>
+  );
+}
 const App = () => {
   return (
       <NavigationContainer>
-        <StackNavigator />
+        <TabNavigator />
       </NavigationContainer>
   )
 }
