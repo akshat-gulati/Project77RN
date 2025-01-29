@@ -1,11 +1,11 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
-    <View style={{justifyContent:'center', alignItems:'center'}}>
+    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home</Text>
-      <Button title="Go to Profile" onPress={() => console.log('Go to Profile')} />
+      <Button title="Go to Profile" onPress={() => navigation.navigate("Profile")} />
     </View>
   )
 }
