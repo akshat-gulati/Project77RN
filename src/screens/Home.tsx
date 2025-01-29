@@ -5,7 +5,7 @@ const Home = ({ navigation }) => {
   return (
     <View style={{ justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home</Text>
-      <Button title="Go to Profile" onPress={() => navigation.navigate("Profile")} />
+      <Button title="Go to Profile" onPress={() => navigation.navigate("Profile", {id: 1, name: "Akshat Gulati"})} />
     </View>
   )
 }

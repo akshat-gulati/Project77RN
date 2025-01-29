@@ -3,9 +3,9 @@ import React from 'react'
 
 const Search = ({navigation}) => {
   return (
-    <View>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Search</Text>
-      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
+      <Button title="Go to Home" onPress={() => navigation.replace("Home")} />
     </View>
   )
 }
